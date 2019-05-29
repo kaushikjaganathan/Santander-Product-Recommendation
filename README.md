@@ -47,3 +47,10 @@ For nominal variables, 'country_of_residence', 'employee_index', 'deceased_index
 For 'country_of_residence', customers from other values except ‘ES’ were removed since the small records could not be analysed objectively. Thus, the records of variables 'customer_type', 'country_of_residence', 'employee_index', 'customer_typ_at_begin', 'residency_index' and 'deceased_index' were removed using this similar method. Furthermore, these columns were removed which were observed to have only one level of data. The variables, 'date_of_first_contract', 'address_type', 'province_code' and 'channel_used' were observed to be correlated or could be inferred to another variable. In particular,  ‘date_of_first_contract’ was removed because it was correlated with ‘seniority’. ‘address_type’ and ‘province_code’ were removed because they could be inferred from ‘province_name’ and ‘channel_used’ was removed because the data dictionary did not provide further elaboration on the meaning of the values displayed.  
 In Feature Engineering, the provinces were group based on their GDP resulting in a new column ‘province_segment’, and a new column ‘No. of Accounts’ were created to show the number of accounts that a customer holds. Customers with no accounts were then removed. The final data after cleaning and preparation has 689449 rows with 35 columns.
 
+### 	Analysis Process Flow
+
+![F3 Analysis Flow](/Images/F3.png)
+
+### 	Exploratory Data Analysis
+
+There were numerical and categorical variables. Within the demographics data section, ‘age’, ‘sex’, ‘seniority’, ‘gross_income’, ‘province_segment’ and ‘no_of_accounts’ were deemed meaningful to be analysed. First, the distribution of the numerical variables was plotted as shown in the figures below. 
