@@ -39,3 +39,11 @@ As we inspect the missing value data pattern, the columns, 'last_date_as_primary
 The dataset was further examined by checking the distribution of continuous and nominal variables. For continuous variables, the 'seniority' variable had outliers which were removed as they had invalid values of ‘-99999’. The figure below shows the distribution of the continuous variables before processing.
 
 ![F1 distribution](/Images/F1.png)
+
+For nominal variables, 'country_of_residence', 'employee_index', 'deceased_index', 'customer_type' variables had a notably minimum of 99.8% of records that had the same value. The distributions can be seen in the figures below.
+
+![F2 distribution](/Images/F2.png)
+
+For 'country_of_residence', customers from other values except ‘ES’ were removed since the small records could not be analysed objectively. Thus, the records of variables 'customer_type', 'country_of_residence', 'employee_index', 'customer_typ_at_begin', 'residency_index' and 'deceased_index' were removed using this similar method. Furthermore, these columns were removed which were observed to have only one level of data. The variables, 'date_of_first_contract', 'address_type', 'province_code' and 'channel_used' were observed to be correlated or could be inferred to another variable. In particular,  ‘date_of_first_contract’ was removed because it was correlated with ‘seniority’. ‘address_type’ and ‘province_code’ were removed because they could be inferred from ‘province_name’ and ‘channel_used’ was removed because the data dictionary did not provide further elaboration on the meaning of the values displayed.  
+In Feature Engineering, the provinces were group based on their GDP resulting in a new column ‘province_segment’, and a new column ‘No. of Accounts’ were created to show the number of accounts that a customer holds. Customers with no accounts were then removed. The final data after cleaning and preparation has 689449 rows with 35 columns.
+
